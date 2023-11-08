@@ -119,4 +119,61 @@ const data = [
         "isLiked": false,
         "rating": 4.9
     }
-]
+];
+
+const searchBar = document.querySelector("#search");
+
+searchBar.addEventListener("keyup",()=>{
+    console.log("hi");
+    console.log(searchBar.value);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+const menu = document.querySelector("#menu");
+const menuShow = document.querySelector("#menuShow");
+const deleteMenu = document.querySelector("#deleteMenu");
+
+menu.addEventListener("click",()=>{
+    console.log("hi");
+    menuShow.classList.toggle("hide");
+});
+
+deleteMenu.addEventListener("click",()=>{
+    menuShow.classList.toggle("hide");
+});
+
+
+
+let obj = {
+    a : 1,
+    b : 3,
+    c : {
+        d:5,
+    }
+}
+ 
+let deepCLone = (obj)=>{
+    const type = typeof obj;
+    if(type !== 'object' || !obj) return obj;
+
+    let arr = Object.entries(obj);
+    let arrOfDeepClone = arr.map((key)=>[
+        key[0],deepCLone(key[1]),
+    ]);
+    
+    let deepColneVersionOfArr = Object.fromEntries(arrOfDeepClone);
+    return deepColneVersionOfArr;
+}
+
+console.log(typeof deepCLone(obj));
