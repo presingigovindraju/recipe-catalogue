@@ -1,4 +1,4 @@
-const data = [
+const recipe = [
     {
         "name": "Veggie Delight",
         "imageSrc": "https://source.unsplash.com/random?veggies",
@@ -122,6 +122,48 @@ const data = [
 ];
 
 const searchBar = document.querySelector("#search");
+const filteringDataVisisble = document.querySelector(".filteringDataVisisble");
+
+
+function recipeCardsMaking(recipe){
+    let makingDivCard = document.createElement("div");
+    makingDivCard.setAttribute("class","cardSquare");
+    makingDivCard.innerHTML=`
+    <img src="${recipe.imageSrc}" alt="recipe.name" class="cardImageSizing">
+    <div class="cardDetials">
+       <p class="vegAreNonVeg">${recipe.type}</p>
+       <div class="nameAndStarDivid">
+         <h1>${recipe.name}</h1>
+         <div>
+         <p>★</p>
+         <span>${recipe.rating}</span>
+         </div>
+       </div>
+       <div>
+          <p>${recipe.time}</p>
+          <div>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-comment-dots"></i>
+          </div>
+       </div>
+    <div/>
+    `;
+    filteringDataVisisble.appendChild(makingDivCard);
+}
+
+function addingCards(recipeCardsDisplay){
+    console.log("hi");
+    filteringDataVisisble.innerHTML="";
+    recipeCardsDisplay.forEach((recipe)=>{
+       recipeCardsMaking(recipe);
+    });
+}
+
+
+
+addingCards(recipe);
+
+
 
 searchBar.addEventListener("keyup",()=>{
     console.log("hi");
@@ -155,25 +197,3 @@ deleteMenu.addEventListener("click",()=>{
 
 
 
-let obj = {
-    a : 1,
-    b : 3,
-    c : {
-        d:5,
-    }
-}
- 
-let deepCLone = (obj)=>{
-    const type = typeof obj;
-    if(type !== 'object' || !obj) return obj;
-
-    let arr = Object.entries(obj);
-    let arrOfDeepClone = arr.map((key)=>[
-        key[0],deepCLone(key[1]),
-    ]);
-    
-    let deepColneVersionOfArr = Object.fromEntries(arrOfDeepClone);
-    return deepColneVersionOfArr;
-}
-
-console.log(typeof deepCLone(obj));
