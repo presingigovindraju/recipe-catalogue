@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Poppins:wght@600&family=Roboto:wght@300&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -299,16 +301,17 @@ td{
 .miniContainer{
     width: 200px;
     height: 220px;
-    border: 1px solid black;
+    box-shadow: 0px 0px 4px black;
     padding: 30px 20px;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
 }
 .filter{
     font-size: x-larger;
     font-weight: 600;
     margin-bottom: 25px;
-
+    
 }
 #rating{
  margin-top: 20px;
@@ -317,7 +320,7 @@ td{
 .filteringDataVisisble{
     width: 1050px;
     height: 600px;
-    border: 1px solid black;
+    border-radius: 20px;
 }
 .keepingFilteringDataInTheMiddle{
    display: flex;
@@ -375,14 +378,15 @@ td{
 
 
 /* cards */
-#scrollStyle{
-  display: flex;
-  white-space: normal;
-  overflow-x: auto;
-}
-.filteringDataVisisbleStyle{
 
+#scrollStyle{
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 20px;
 }
+
 .cardImageSizing{
     width: 170px;
     height: 120px;
@@ -393,12 +397,51 @@ td{
  .cardSquare{
     width: 180px;
     height: 250px;
-    border: 1px solid black;
+    box-shadow: 0px 0px 6px black;
     border-radius: 10px;
     padding: 10px 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
  }
-
-
+ .vegAreNonVeg{
+    color: #a29184;
+ }
+ .cardDetials{
+    margin-top: 5px;
+ }
+ .nameAndStarDivid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+ }
+#startRating{
+    display: flex;
+    gap: 5px;
+}
+.timeAndLikes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.timeColorChange{
+    color: #cb5a34;
+}
+.startColorChange{
+    color: #ffd700;
+    margin-left: -5px;
+}
+.racipeRating{
+    margin-top: 3.5px;
+}
+.loveColorChange{
+    margin-left: -45px;
+    margin-right: 8px;
+    
+}
 
 
 

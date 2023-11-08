@@ -3,7 +3,7 @@ const recipe = [
         "name": "Veggie Delight",
         "imageSrc": "https://source.unsplash.com/random?veggies",
         "time": "30 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.2
     },
@@ -11,7 +11,7 @@ const recipe = [
         "name": "Chicken Grill",
         "imageSrc": "https://source.unsplash.com/random?chicken",
         "time": "45 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.5
     },
@@ -19,7 +19,7 @@ const recipe = [
         "name": "Cheese Pizza",
         "imageSrc": "https://source.unsplash.com/random?pizza",
         "time": "40 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.1
     },
@@ -27,7 +27,7 @@ const recipe = [
         "name": "Steak",
         "imageSrc": "https://source.unsplash.com/random?steak",
         "time": "60 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.7
     },
@@ -35,7 +35,7 @@ const recipe = [
         "name": "Grilled Salmon",
         "imageSrc": "https://source.unsplash.com/random?salmon",
         "time": "50 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.6
     },
@@ -43,7 +43,7 @@ const recipe = [
         "name": "Tomato Pasta",
         "imageSrc": "https://source.unsplash.com/random?pasta",
         "time": "35 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.0
     },
@@ -51,7 +51,7 @@ const recipe = [
         "name": "Vegan Salad",
         "imageSrc": "https://source.unsplash.com/random?salad",
         "time": "20 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 3.9
     },
@@ -59,7 +59,7 @@ const recipe = [
         "name": "Fried Chicken",
         "imageSrc": "https://source.unsplash.com/random?friedChicken",
         "time": "55 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.3
     },
@@ -67,7 +67,7 @@ const recipe = [
         "name": "Mushroom Risotto",
         "imageSrc": "https://source.unsplash.com/random?risotto",
         "time": "45 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.5
     },
@@ -75,7 +75,7 @@ const recipe = [
         "name": "Burger",
         "imageSrc": "https://source.unsplash.com/random?burger",
         "time": "30 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.2
     },
@@ -83,7 +83,7 @@ const recipe = [
         "name": "Paneer Tikka",
         "imageSrc": "https://source.unsplash.com/random?paneerTikka",
         "time": "40 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.4
     },
@@ -91,7 +91,7 @@ const recipe = [
         "name": "BBQ Ribs",
         "imageSrc": "https://source.unsplash.com/random?ribs",
         "time": "70 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.6
     },
@@ -99,7 +99,7 @@ const recipe = [
         "name": "Caesar Salad",
         "imageSrc": "https://source.unsplash.com/random?caesarSalad",
         "time": "25 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 3.8
     },
@@ -107,7 +107,7 @@ const recipe = [
         "name": "Fish Tacos",
         "imageSrc": "https://source.unsplash.com/random?fishTacos",
         "time": "35 min",
-        "type": "non-veg",
+        "type": "Non-Veg",
         "isLiked": false,
         "rating": 4.3
     },
@@ -115,7 +115,7 @@ const recipe = [
         "name": "Chocolate Cake",
         "imageSrc": "https://source.unsplash.com/random?chocolateCake",
         "time": "90 min",
-        "type": "veg",
+        "type": "Veg",
         "isLiked": false,
         "rating": 4.9
     }
@@ -133,16 +133,16 @@ function recipeCardsMaking(recipe){
     <div class="cardDetials">
        <p class="vegAreNonVeg">${recipe.type}</p>
        <div class="nameAndStarDivid">
-         <h1>${recipe.name}</h1>
-         <div>
-         <p>★</p>
-         <span>${recipe.rating}</span>
+         <h3 id="textSizing">${recipe.name}</h3>
+         <div id="startRating">
+         <p class="startColorChange">★</p>
+         <span class="racipeRating">${recipe.rating}</span>
          </div>
        </div>
-       <div>
-          <p>${recipe.time}</p>
+       <div class="timeAndLikes">
+          <p class="timeColorChange">${recipe.time}</p>
           <div>
-          <i class="fa-regular fa-heart"></i>
+          <i class="loveColorChange fa-regular fa-heart"></i>
           <i class="fa-solid fa-comment-dots"></i>
           </div>
        </div>
