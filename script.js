@@ -121,7 +121,7 @@ const recipe = [
     }
 ];
 
-const searchBar = document.querySelector("#search");
+
 const filteringDataVisisble = document.querySelector(".filteringDataVisisble");
 
 
@@ -142,7 +142,7 @@ function recipeCardsMaking(recipe){
        <div class="timeAndLikes">
           <p class="timeColorChange">${recipe.time}</p>
           <div>
-          <i class="loveColorChange fa-regular fa-heart"></i>
+          <i  class="loveColorChange fa-regular fa-heart"></i>
           <i class="fa-solid fa-comment-dots"></i>
           </div>
        </div>
@@ -152,7 +152,6 @@ function recipeCardsMaking(recipe){
 }
 
 function addingCards(recipeCardsDisplay){
-    console.log("hi");
     filteringDataVisisble.innerHTML="";
     recipeCardsDisplay.forEach((recipe)=>{
        recipeCardsMaking(recipe);
@@ -164,14 +163,61 @@ function addingCards(recipeCardsDisplay){
 addingCards(recipe);
 
 
+const searchBar = document.querySelector("#search");
 
-searchBar.addEventListener("keyup",()=>{
-    console.log("hi");
+
+// 
+searchBar.addEventListener("input",()=>{
+    const searchValue = searchBar.value.toLowerCase();
     console.log(searchBar.value);
+    const filteredSearchResult = recipe.filter((recipe)=>{
+       return  recipe.name.toLowerCase().includes(searchValue);
+    });
+    addingCards(filteredSearchResult);
 });
 
+// All recipes
 
+const allRecipes = document.querySelector(".orangeColor");
+allRecipes.addEventListener("click",()=>{
+    return addingCards(recipe);
+});
 
+// veg recipe
+const VegRecipe = document.querySelector(".lemonColor");
+
+VegRecipe.addEventListener("click",()=>{
+    const onlyVeg = VegRecipe.value.toLowerCase();
+    console.log(onlyVeg);
+    const vegFilter = recipe.filter((recipe)=> recipe.type == "Veg");
+    addingCards(vegFilter);
+});
+
+// Non-Veg
+const nonVeg = document.querySelector(".redishColor");
+
+nonVeg.addEventListener("click",()=>{
+    const nonVegFilter = recipe.filter((recipe)=> recipe.type == "Non-Veg");
+    addingCards(nonVegFilter);
+});
+
+// rating above 4
+const ratingAbove4 = document.querySelector("#ratingAbove4");
+const ratingBelow4 = document.querySelector("#ratingBelow4");
+
+ratingAbove4.addEventListener("click",()=>{
+    console.log("ratingAbove4");
+    const aboveRating = recipe.filter((recipe)=> recipe.rating >= ratingAbove4.value );
+    console.log(ratingAbove4);
+    addingCards(aboveRating);
+});
+
+ratingBelow4.addEventListener("click",()=>{
+    console.log("ratingAbove4");
+    const belowRating = recipe.filter((recipe)=> recipe.rating < ratingBelow4.value );
+    console.log(ratingAbove4);
+    addingCards(belowRating);
+});
 
 
 
@@ -197,3 +243,8 @@ deleteMenu.addEventListener("click",()=>{
 
 
 
+const liked = document.querySelector(".loveColorChange");
+console.log(liked);
+liked.addEventListener("click",()=>{
+    liked.classList.toggle("heartColor");
+});

@@ -53,9 +53,17 @@
       </div>
       <div class="positioning">
         <div id="nav-options">
-          <h4 class="home-options">Home</h4>
+          <!-- <h4 class="home-options">Home</h4>
           <h4 class="home-options">Explore</h4>
-          <h4 class="home-options">Help</h4>
+        <h4 class="home-options">Help</h4> -->
+          <a class="home-options" href="#homeFocus" title="home_button">Home</a>
+          <a class="home-options" href="#exploreInTheMiddle" title="explore_button"
+            >Explore</a
+          >
+          <a class="home-options" href="#helpUser" title="help_button"
+            >help</a
+          >
+          
           <img id="profile_img" src="./Profile.png" alt="profile_img" />
         </div>
         <div id="menu">
@@ -94,7 +102,7 @@
         <button class="filterButtons orangeColor">
           All Recipes<i class="distance fa-solid fa-chevron-right"></i>
         </button>
-        <button class="filterButtons lemonColor">
+        <button class="filterButtons lemonColor" value="veg">
           Veg Recipes Only<i class="distance fa-solid fa-chevron-right"></i>
         </button>
         <button class="filterButtons redishColor">
@@ -105,11 +113,11 @@
     <section class="keepingFilteringDataInTheMiddle">
       <div class="filteringDataSection  ">
         <div class="miniContainer">
-          <h2 class="filter">Filters</h2>
+          <h2 class="filter">Rating</h2>
           <div>
-            <input type="checkbox" name="rating" id="rating" />4 and Above
+            <input type="checkbox" name="rating" id="ratingAbove4" value="4" /> 4 and Above 
           </div>
-          <div><input type="checkbox" name="rating" id="rating" />Below 4</div>
+          <div><input type="checkbox" name="rating" id="ratingBelow4" value="4"/>Below 4</div>
         </div>
         <!-- adding cards -->
         <div id="scrollStyle" class="filteringDataVisisble filteringDataVisisbleStyle">
